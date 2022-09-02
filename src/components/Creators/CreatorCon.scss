@@ -1,0 +1,10 @@
+.creators{
+    margin-top: 150px;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media(max-width:720px){
+        justify-content: center;
+    }
+}

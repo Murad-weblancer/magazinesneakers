@@ -1,0 +1,107 @@
+.shops{
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    @media(max-width:720px){
+        justify-content: center;
+    }
+    flex-wrap: wrap;
+    margin-top: 50px;
+    button{
+        border: 1px solid black;
+        outline: none;
+        padding: 8px 24px;
+        border-radius: 4px;
+        font-size: 15px;
+        line-height: 20px;
+        cursor: pointer;
+        margin-top: 12px;
+        background: transparent;
+        transition: .3s ease-in;
+        opacity: 0;
+        &:hover{
+            background: #000;
+            color: white;
+        }
+    }
+}
+.cart-hover{
+    &:hover{
+        box-shadow: 0 0 4px black;
+        padding: 8px;
+        button{
+            opacity: 1;
+        }
+    }
+}
+.cart{
+    width: 49%;
+    transition: .3s ease-in-out;
+
+    img{
+        width: 100%;
+        height: 350px;
+        // object-fit: cover;
+    }
+    cursor: pointer;
+    margin-bottom: 50px;
+    @media(max-width:720px){
+        width: 97%;
+    }
+    img{
+        width: 100%;
+        object-fit: contain;
+    }
+    &-con{
+        margin-top: 12px;
+        h3{
+            color: #54595F;
+            font-weight: 500;
+            margin-bottom: 7px;
+            &:hover{
+                color: #ff756e;
+            }
+        }
+        span{
+            font-size: 14px;
+            font-weight: 300;
+            color: #54595F;
+
+        }
+    }
+}
+.category{
+    margin-top: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    @media(max-width:720px){
+        width: 100%;
+    }
+    li{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 23px;
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        @media(max-width:480px){
+            font-size: 14px;
+            line-height: 18px;
+        }
+        &:hover{
+            color: rgb(255, 117, 110);
+        }
+        &.active{
+            font-size: 22px;
+            line-height: 27px;
+            border-bottom: 2px solid rgb(255, 117, 110);
+            color: rgb(255, 117, 110);
+            @media(max-width:480px){
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+}

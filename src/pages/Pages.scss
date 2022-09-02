@@ -1,0 +1,43 @@
+.single{
+    margin-top: 150px;
+    h1{
+        margin-bottom: 35px;
+        margin-left: 18%;
+        @media(max-width: 480px){
+            font-size: 23px;
+        }
+    }
+    p{
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 500;
+        margin-top: 35px;
+        margin-bottom: 35px;
+        @media(max-width: 480px){
+            font-size: 12px;
+            line-height: 17px;
+
+        }
+    }
+    img{
+        width: 75%;
+    }
+}
+.single-but{
+    border: 1px solid black;
+    outline: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: pointer;
+    margin-top: 12px;
+    background: transparent;
+    transition: .3s ease-in;
+    margin-bottom: 50px;
+    &:hover{
+        background: #000;
+        color: white;
+    }
+
+}

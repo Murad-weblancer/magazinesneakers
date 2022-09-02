@@ -1,0 +1,41 @@
+.footer{
+    width: 100%;
+    min-height: 200px;
+    background: #ff756e;
+    padding: 50px 0;
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-right{
+        width: 100%;
+        img{
+            width: 30%;
+            @media(max-width:1200px){
+                width: 50%;
+            }
+            @media(max-width:720px){
+                width: 80%;
+            }
+            @media(max-width:480px){
+                width: 90%;
+            }
+        }
+        h4{
+            color: white;
+            margin-top: 15px;
+        }
+    }
+    &-left{
+        display: flex;
+        align-items: center;
+        .icons{
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+}
