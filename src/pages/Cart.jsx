@@ -15,18 +15,18 @@ export const Cart = () => {
     setOpen(!open)
   }
   const dispatch = useDispatch()
-  // if (shoes.length === 0) {
-  //   return (
-  //     <div className="container">
-  //       <div className="empty">
-  //         <img className="empty-img" src="img/empty.png" alt="" />
-  //         <Link to="/">
-  //           <button> Go Back </button>
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (shoes.length === 0) {
+    return (
+      <div className="container">
+        <div className="empty">
+          <img className="empty-img" src="img/empty.png" alt="" />
+          <Link to="/">
+            <button> Go Back </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
     <div className="container cartcon">
