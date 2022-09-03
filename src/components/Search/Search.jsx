@@ -5,24 +5,28 @@ import {AiOutlineClose} from 'react-icons/ai'
 
 import { getSearch } from "../../store/slices/filterSlice";
 import "./Search.scss";
-export const Search = ({ searches, openSearch,valueRef,searchEnter }) => {
+export const Search = ({ searches, openSearch }) => {
   const { search } = useSelector((state) => state.filter);
   const dispatch = useDispatch();
-  const [isActive, setIsActive] = useState(false);
+  const valueRef = useRef(null)
+  // const [isActive, setIsActive] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      setIsActive(!isActive);
-      return searchEnter('')
+      // setIsActive(!isActive);
+      return openSearch('')
     }
   };
 
   useEffect(() => {
+    if(searches){
+      valueRef.current.focus()
+    }
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [searches]);
 
 
   return (

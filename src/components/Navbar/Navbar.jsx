@@ -7,14 +7,15 @@ import { RiCloseLine } from "react-icons/ri";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { Popup } from "../Popup/Popup";
 import { Search } from "../Search/Search";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getSearch } from "../../store/slices/filterSlice";
 export const Navbar = () => {
   const { shoes } = useSelector((state) => state.cart);
   const totalCoumnt = shoes.reduce((sum, obj) => sum + obj.count, 0);
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
-  const valueRef = useRef(null);
   const [search, setSearch] = useState(false);
+  const dispatch = useDispatch()
   const location = useLocation();
   if (open) {
     document.body.style.overflow = "hidden";
@@ -31,6 +32,8 @@ export const Navbar = () => {
   };
   const openSearch = () => {
     setSearch(!search);
+    dispatch(getSearch(''))
+
   };
   return (
     <>
@@ -110,7 +113,6 @@ export const Navbar = () => {
       <Search
         searches={search}
         openSearch={openSearch}
-        valueRef={valueRef}
         searchEnter={setSearch}
       />
     </>

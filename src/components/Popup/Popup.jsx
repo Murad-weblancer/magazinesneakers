@@ -7,8 +7,13 @@ import './Popup.scss'
 export const Popup = ({open,modal}) => {
     const [value,setValue] = useState('')
     const handleClick = () => {
+      if(value === ""){
+        alert("Write your Email")
+      }else{
         setValue('')
         modal()
+      }
+
     }
   return (
     <AnimatePresence>
@@ -52,7 +57,7 @@ export const Popup = ({open,modal}) => {
 
                   className="modal-main-wrapper-con"
                 >
-                    <span onClick={handleClick}> <AiOutlineClose size={20}/> </span>
+                    <span onClick={modal}> <AiOutlineClose size={20}/> </span>
                     <div className='socials'>
                         <FaFacebookF className='icons' size={25} />
                         <FaInstagram className='icons' size={25} />
